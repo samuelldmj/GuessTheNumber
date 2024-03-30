@@ -59,7 +59,7 @@ document.querySelector(".check").addEventListener('click', function () {
 
 document.querySelector(".again").addEventListener('click', function () {
 
-    let heart = 7;
+    heart = 7;
     //restoring secret number
     secretNumber = Math.trunc(Math.random() * 20) + 1;
 
