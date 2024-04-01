@@ -27,49 +27,42 @@ document.querySelector(".check").addEventListener('click', function () {
         //making the guess visible here when guess is correct
         document.querySelector('.number').textContent = secretNumber;
 
-        if (heart > highScore && heart === 7) {
-            highScore = heart * secretNumber;
-            document.querySelector('.highscore').textContent = highScore;
-        } else if (heart > highScore && heart === 6) {
-            highScore = 6 * secretNumber;
-            document.querySelector('.highscore').textContent = highScore;
-        } else if (heart > highScore && heart === 5) {
-            highScore = 5 * secretNumber
-            document.querySelector('.highscore').textContent = highScore;
-        } else if (heart > highScore && heart === 4) {
-            highScore = 4 * secretNumber
-        } else if (heart > highScore && heart === 3) {
-            highScore = 3 * secretNumber
-            document.querySelector('.highscore').textContent = highScore;
-        } else if (heart > highScore && heart === 2) {
-            highScore = 5 * secretNumber
-            document.querySelector('.highscore').textContent = highScore;
-        } else if (heart > highScore && heart === 1) {
-            highScore = 5 * secretNumber
-            document.querySelector('.highscore').textContent = highScore;
-        }
+
 
         //proper fix of highscore
-        // if (heart > highScore) {
-        //     highScore = heart
-        //     document.querySelector('.highscore').textContent = highScore;
-        // }
-
-
-    }
-    else if (guess > secretNumber) {
-        if (heart > 1) {
-            document.querySelector('.message').textContent = " Number too high 📈";
-            heart--;
-            document.querySelector('.score').textContent = heart;
-        } else {
-            document.querySelector('.message').textContent = " You are a failure!!! 💀";
-            document.querySelector('.score').textContent = 0;
+        if (heart > highScore) {
+            highScore = heart
+            document.querySelector('.highscore').textContent = highScore;
         }
     }
-    else if (guess < secretNumber) {
+
+    //longer method
+    // else if (guess > secretNumber) {
+    //     if (heart > 1) {
+    //         document.querySelector('.message').textContent = " Number too high 📈";
+    //         heart--;
+    //         document.querySelector('.score').textContent = heart;
+    //     } else {
+    //         document.querySelector('.message').textContent = " You are a failure!!! 💀";
+    //         document.querySelector('.score').textContent = 0;
+    //     }
+    // }
+    // else if (guess < secretNumber) {
+    //     if (heart > 1) {
+    //         document.querySelector('.message').textContent = " Number too low 📉";
+    //         heart--;
+    //         document.querySelector('.score').textContent = heart;
+    //     } else {
+    //         document.querySelector('.message').textContent = " You are a failure!!! 💀";
+    //         document.querySelector('.score').textContent = 0;
+    //     }
+    // }
+
+
+    //refactoring the code
+    else if (guess !== secretNumber) {
         if (heart > 1) {
-            document.querySelector('.message').textContent = " Number too low 📉";
+            document.querySelector('.message').textContent = guess > secretNumber ? " Number too high 📈" : " Number too low 📉";
             heart--;
             document.querySelector('.score').textContent = heart;
         } else {
