@@ -10,7 +10,7 @@ change text, change attribute and even css styles)
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // the Heart
-let heart = 7;
+let heart = 4;
 let highScore = 0;
 
 document.querySelector(".check").addEventListener('click', function () {
