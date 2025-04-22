@@ -83,7 +83,7 @@ document.querySelector(".check").addEventListener('click', function () {
 
 document.querySelector(".again").addEventListener('click', function () {
 
-    heart = 7;
+    heart = 4;
     //restoring secret number
     secretNumber = Math.trunc(Math.random() * 20) + 1;
 
