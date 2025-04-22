@@ -68,6 +68,8 @@ document.querySelector(".check").addEventListener('click', function () {
         } else {
             document.querySelector('.message').textContent = " You are a failure!!! 💀";
             document.querySelector('.score').textContent = 0;
+            //background
+            document.querySelector('body').style.backgroundColor = '#ff0000';
         }
     }
 })
